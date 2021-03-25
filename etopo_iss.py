@@ -9,6 +9,13 @@ import numpy as np
 from netCDF4 import Dataset
 from plotly.offline import plot
 
+""" 
+3D visualization done based on article: https://towardsdatascience.com/create-interactive-globe-earthquake-plot-in-python-b0b52b646f27
+
+“ETOPO1_Ice_g_gdal.grd” file which is a grid-registered netCDF file of ETOPO1 Ice Surface should be downloaded from https://www.ngdc.noaa.gov/mgg/global/.
+
+"""
+
 
 def Etopo(lon_area, lat_area, resolution):
     # Input
