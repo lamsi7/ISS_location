@@ -140,9 +140,13 @@ noaxis = dict(showbackground=False,
 titlecolor = 'white'
 bgcolor = 'black'
 
+# Get current people in space (ISS specificly)
+astronauts = coor.astro_names()
+
+title_value = f"Current location of ISS indicated by the red dot. <br>There are {len(astronauts)} astronauts on ISS right now:<br><br>{'<br>'.join(astronauts)}"
 layout = go.Layout(
     autosize=False, width=1200, height=800,
-    title='Current location of ISS indicated by the red dot',
+    title=title_value,
     titlefont=dict(family='Courier New', color=titlecolor),
     showlegend=False,
     scene=dict(
@@ -151,7 +155,7 @@ layout = go.Layout(
         zaxis=noaxis,
         aspectmode='manual',
         aspectratio=go.layout.scene.Aspectratio(
-          x=1, y=1, z=1)),
+            x=1, y=1, z=1)),
     paper_bgcolor=bgcolor,
     plot_bgcolor=bgcolor)
 
@@ -182,4 +186,5 @@ scene = dict(camera=dict(eye=dict(x=xs_ev_org*1.5,
                                   y=ys_ev_org*1.5, z=zs_ev_org*1.5)))
 fig = go.Figure(data=plot_data_iss, layout=layout)
 fig.update_layout(scene=scene)
+
 plot(fig, validate=False, filename='ISS_3D.html', auto_open=True)
