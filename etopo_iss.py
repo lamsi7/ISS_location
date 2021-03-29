@@ -7,7 +7,7 @@ import coor
 import plotly.graph_objs as go
 import numpy as np
 from netCDF4 import Dataset
-from plotly.offline import plot
+
 
 """ 
 3D visualization done based on article: https://towardsdatascience.com/create-interactive-globe-earthquake-plot-in-python-b0b52b646f27
@@ -176,7 +176,7 @@ iss_scatter = go.Scatter3d(x=x_iss,
                            y=y_iss,
                            z=z_iss,
                            mode='markers',
-                           name='measured'
+                           name='ISS'
                            )
 
 plot_data_iss = [topo_sphere]+[iss_scatter]
