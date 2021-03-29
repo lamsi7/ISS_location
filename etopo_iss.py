@@ -1,12 +1,18 @@
-from matplotlib import cm
-import matplotlib
-import glob
-import pandas as pd
-from plotly.offline import plot
-import coor
-import plotly.graph_objs as go
-import numpy as np
+from dash.dependencies import Input, Output
+import time
 from netCDF4 import Dataset
+import numpy as np
+import plotly.graph_objs as go
+import coor
+from plotly.offline import plot
+import glob
+import matplotlib
+from matplotlib import cm
+import dash
+import dash_core_components as dcc
+import dash_html_components as html
+import plotly.express as px
+import pandas as pd
 
 
 """ 
