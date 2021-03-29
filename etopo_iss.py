@@ -159,6 +159,14 @@ layout = go.Layout(
     paper_bgcolor=bgcolor,
     plot_bgcolor=bgcolor)
 
+"""
+Let the ISS location be updated every 5 seconds -> plotly dash
+"""
+# CSS
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+
+# Set dash
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 # ISS
 iss_location = coor.iss_req()
