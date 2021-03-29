@@ -186,31 +186,36 @@ app.layout = html.Div(
         )
     ])
 )
-# ISS
-iss_location = coor.iss_req()
 
-# Will retrieve string biut it will be converted in mapping_map_to_sphere
-iss_lat = iss_location['latitude']  # 33.2291
-iss_lon = iss_location['longitude']  # 72.8234
+# For live update of graph:
 
-# Convert to spherical coordinates
-xs_ev_org, ys_ev_org, zs_ev_org = mapping_map_to_sphere(iss_lon, iss_lat)
-x_iss = np.array(xs_ev_org)
-y_iss = np.array(ys_ev_org)
-z_iss = np.array(zs_ev_org*1.1)
-iss_scatter = go.Scatter3d(x=x_iss,
-                           y=y_iss,
-                           z=z_iss,
-                           mode='markers',
-                           name='ISS'
-                           )
 
-plot_data_iss = [topo_sphere]+[iss_scatter]
+@app.callback(Output('iss-graph', 'figure'), Input('interval-component', 'n_intervals'))
+def iss(n):
+    # ISS
+    iss_location = coor.iss_req()
 
-# After loading set the view where the ISS is located
-scene = dict(camera=dict(eye=dict(x=xs_ev_org*1.5,
-                                  y=ys_ev_org*1.5, z=zs_ev_org*1.5)))
-fig = go.Figure(data=plot_data_iss, layout=layout)
-fig.update_layout(scene=scene)
+    # Will retrieve string but it will be converted in mapping_map_to_sphere
+    iss_lat = iss_location['latitude']
+    iss_lon = iss_location['longitude']
 
-plot(fig, validate=False, filename='ISS_3D.html', auto_open=True)
+    # Convert to spherical coordinates
+    xs_ev_org, ys_ev_org, zs_ev_org = mapping_map_to_sphere(iss_lon, iss_lat)
+    x_iss = np.array(xs_ev_org)
+    y_iss = np.array(ys_ev_org)
+    z_iss = np.array(zs_ev_org*1.1)
+    iss_scatter = go.Scatter3d(x=x_iss,
+                               y=y_iss,
+                               z=z_iss,
+                               mode='markers',
+                               name='ISS'
+                               )
+
+    plot_data_iss = [topo_sphere]+[iss_scatter]
+
+    # After loading set the view where the ISS is located
+    scene = dict(camera=dict(eye=dict(x=xs_ev_org*1.5,
+                                      y=ys_ev_org*1.5, z=zs_ev_org*1.5)))
+    fig = go.Figure(data=plot_data_iss, layout=layout)
+    fig.update_layout(scene=scene)
+    return fig
