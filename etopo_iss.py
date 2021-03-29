@@ -173,7 +173,19 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 # Set dash
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-
+# Layout; interval - 5 sec
+app.layout = html.Div(
+    html.Div([
+        html.H4('ISS Live Feed'),
+        html.Div(id='live-update-text'),
+        dcc.Graph(id='iss-graph'),
+        dcc.Interval(
+            id='interval-component',
+            interval=5*1000,  # in milliseconds
+            n_intervals=0
+        )
+    ])
+)
 # ISS
 iss_location = coor.iss_req()
 
