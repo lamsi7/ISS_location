@@ -186,10 +186,20 @@ app.layout = html.Div(
         )
     ])
 )
+# Text live update
+@app.callback(Output('live-update-text', 'children'),
+              Input('interval-component', 'n_intervals'))
+def update_metrics(n):
+    iss_location = coor.iss_req()
+    iss_lat = iss_location['latitude']
+    iss_lon = iss_location['longitude']
+    style = {'padding': '5px', 'fontSize': '16px'}
+    return [
+        html.Span('Longitude: {}'.format(iss_lon), style=style),
+        html.Span('Latitude: {}'.format(iss_lat), style=style),
+    ]
 
 # For live update of graph:
-
-
 @app.callback(Output('iss-graph', 'figure'), Input('interval-component', 'n_intervals'))
 def iss(n):
     # ISS
@@ -219,3 +229,7 @@ def iss(n):
     fig = go.Figure(data=plot_data_iss, layout=layout)
     fig.update_layout(scene=scene)
     return fig
+
+
+if __name__ == '__main__':
+    app.run_server(debug=True)
