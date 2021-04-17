@@ -1,7 +1,7 @@
 from netCDF4 import Dataset
 import numpy as np
 import plotly.graph_objs as go
-import coor
+from application import coor
 import matplotlib
 from matplotlib import cm
 
@@ -137,8 +137,8 @@ noaxis = dict(showbackground=False,
               ticks='',
               title='',
               zeroline=False)
-titlecolor = 'white'
-bgcolor = 'black'
+titlecolor = 'black'
+bgcolor = 'white'
 
 # Get current people in space (ISS specificly)
 astronauts = coor.astro_names()
