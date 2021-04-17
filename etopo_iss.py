@@ -3,7 +3,7 @@ import time
 from netCDF4 import Dataset
 import numpy as np
 import plotly.graph_objs as go
-import coor
+from application import coor
 from plotly.offline import plot
 import glob
 import matplotlib
@@ -190,6 +190,8 @@ app.layout = html.Div(
     ])
 )
 # Text live update
+
+
 @app.callback(Output('live-update-text', 'children'),
               Input('interval-component', 'n_intervals'))
 def update_metrics(n):
@@ -203,6 +205,8 @@ def update_metrics(n):
     ]
 
 # For live update of graph:
+
+
 @app.callback(Output('iss-graph', 'figure'), Input('interval-component', 'n_intervals'))
 def iss(n):
     # ISS
