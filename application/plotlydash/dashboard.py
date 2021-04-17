@@ -1,7 +1,7 @@
 from dash.dependencies import Input, Output
 import numpy as np
 import plotly.graph_objs as go
-import coor
+from application import coor
 from plotly.offline import plot
 import dash
 import dash_core_components as dcc
@@ -22,12 +22,14 @@ def init_dashboard(server):
     dash_app = dash.Dash(
         server=server,
         routes_pathname_prefix='/dashapp/',
-        external_stylesheets=external_stylesheets
+        external_stylesheets=external_stylesheets,
+        title='ISS 3D'
     )
     #dash_app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
     # Layout; interval - 5 sec
     dash_app.layout = html.Div(
         html.Div([
+            #dcc.Link('Go back to the main page.', href='/'),
             html.H4('ISS Live Feed'),
             html.Div(id='live-update-text'),
             dcc.Graph(id='iss-graph'),
