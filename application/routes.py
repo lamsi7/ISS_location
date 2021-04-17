@@ -6,4 +6,9 @@ from flask import current_app as app
 @app.route('/')
 def home():
     """Landing page."""
-    return "Hello ISS"
+    return render_template('home.html')
+
+
+@app.route('/test')
+def d():
+    return render_template('d.html')
