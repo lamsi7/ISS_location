@@ -16,3 +16,7 @@ def dash_frame():
 @app.route('/plotly_ISS_2D/')
 def plotly_iss_2d():
     return render_template('plotly_2d.html')
+
+@app.route('/test/')
+def test_iss_2d():
+    return render_template('test_2d.html')
