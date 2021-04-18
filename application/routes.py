@@ -9,6 +9,10 @@ def home():
     return render_template('home.html')
 
 
-@app.route('/test')
-def d():
-    return render_template('d.html')
+@app.route('/frame_3d_iss/')
+def dash_frame():
+    return render_template('dash_flask.html')
+
+@app.route('/plotly_ISS_2D/')
+def plotly_iss_2d():
+    return render_template('plotly_2d.html')

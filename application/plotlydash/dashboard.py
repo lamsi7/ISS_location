@@ -7,9 +7,8 @@ import sys
 import plotly.graph_objs as go
 import numpy as np
 from dash.dependencies import Input, Output
-sys.path.append('..')
-import coor
-import earth_3d as earth
+from application import coor
+from application import earth_3d as earth
 
 """
 Let the ISS location be updated every 5 seconds -> plotly dash
