@@ -1,14 +1,15 @@
-from dash.dependencies import Input, Output
-import numpy as np
-import plotly.graph_objs as go
-from application import coor
-from plotly.offline import plot
-import dash
-import dash_core_components as dcc
-import dash_html_components as html
 import plotly.express as px
-from application import earth_3d as earth
-
+import dash_html_components as html
+import dash_core_components as dcc
+import dash
+from plotly.offline import plot
+import sys
+import plotly.graph_objs as go
+import numpy as np
+from dash.dependencies import Input, Output
+sys.path.append('..')
+import coor
+import earth_3d as earth
 
 """
 Let the ISS location be updated every 5 seconds -> plotly dash
@@ -17,7 +18,8 @@ Let the ISS location be updated every 5 seconds -> plotly dash
 
 def init_dashboard(server):
     # CSS
-    external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+    external_stylesheets = [
+        'https://codepen.io/chriddyp/pen/bWLwgP.css']
     # Set dash
     dash_app = dash.Dash(
         server=server,
