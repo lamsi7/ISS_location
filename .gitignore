@@ -4,3 +4,5 @@ __pycache__/
 application/__pycache__/
 application/plotlydash/__pycache__/
 archived/
+.vscode/
+dash/
