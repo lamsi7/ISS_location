@@ -1,1 +1,5 @@
 ETOPO1_Ice_g_gdal.grd
+venv/
+__pycache__/
+application/__pycache__/
+application/plotlydash/__pycache__/
