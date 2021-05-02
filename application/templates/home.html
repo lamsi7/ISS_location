@@ -4,9 +4,17 @@
 
 {% block body %}
 
-    {% block links %}
-    <li><a href="/frame_3d_iss/">3D visualization</a></li>
-    <li><a href="/plotly_ISS_2D/">2D visualization</a></li>
-    
-    {% endblock %}
+<div class="test_mask row h-100">
+        <div class="col-sm-12 my-auto">
+                        <h1 class="cover-heading">ISS TRACKER</h1>
+                        <p class="lead">Current location of the Internation Space Station</p>
+                        <p class="lead">
+                                <a href="/frame_3d_iss/" class="btn btn-lg btn-secondary">3D visualization</a>
+                        </p>
+                        <p class="lead">
+                            <a href="/plotly_ISS_2D/" class="btn btn-lg btn-secondary">2D visualization</a>
+                        </p>   
+        </div>
+     </div>
+
 {% endblock %}
