@@ -9,11 +9,6 @@ from matplotlib import cm
 """ 
 3D visualization done based on article: https://towardsdatascience.com/create-interactive-globe-earthquake-plot-in-python-b0b52b646f27
 
-“ETOPO1_Ice_g_gdal.grd” file which is a grid-registered netCDF file of ETOPO1 Ice Surface should be downloaded from https://www.ngdc.noaa.gov/mgg/global/.
-
-For live dash:
-
-Run this app and visit http://127.0.0.1:8050/ in your web browser.
 """
 
 
