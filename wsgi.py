@@ -3,7 +3,7 @@ from download_grd import *
 
 grd_file = 'ETOPO1_Ice_g_gdal.grd.gz'
 #Check if ETOPO1_Ice_g_gdal.grd.gz is downloaded:
-if not os.path.isfile(grd_file.replace('.gz',''))):
+if not os.path.isfile(grd_file.replace('.gz','')):
     url = f"https://www.ngdc.noaa.gov/mgg/global/relief/ETOPO1/data/ice_surface/grid_registered/netcdf/{grd_file}"
     print(f"Downloading {grd_file} (377Mb)...")
     download_file(url)
