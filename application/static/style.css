@@ -1,8 +1,6 @@
 body {
     /* Image taken from https://unsplash.com/photos/hiTlXbs0-ZU */
     background-image: url("img/andrew-preble-hiTlXbs0-ZU-unsplash.jpg");
-    height: 100%;
-
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
