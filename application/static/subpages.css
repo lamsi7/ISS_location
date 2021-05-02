@@ -3,7 +3,8 @@ body {
     font-weight: 400;
     font-size: 14px;
     color: #fff;
-    overflow-x: hidden;
+    overflow: hidden;
+    background-color:rgb(64,64,64);
 
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
@@ -21,4 +22,46 @@ li {
 
 a{
     text-decoration: none;
+    color: white;
 }
+
+@keyframes myAnimation{
+    0%{
+      opacity: 1;
+      transform: rotateX(90deg);
+    }
+    50%{
+      opacity: 0.5;
+      transform: rotateX(0deg);
+    }
+    100%{
+      display: none;
+      opacity: 0;
+      transform: rotateX(90deg);
+    }
+  }
+  
+  .loading{
+      width: 20%;
+      animation-name: myAnimation;
+      animation-duration: 4.8s;
+      animation-fill-mode: forwards;
+  }
+.trans{
+
+    animation-delay: 3s;
+    animation: fade 5s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
