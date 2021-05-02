@@ -3,7 +3,7 @@ body {
     font-weight: 400;
     font-size: 14px;
     color: #fff;
-    overflow: hidden;
+    overflow-x: hidden;
     background-color:rgb(64,64,64);
 
     -webkit-font-smoothing: antialiased;
@@ -41,7 +41,7 @@ a{
     }
   }
   
-  .loading{
+.loading{
       width: 20%;
       animation-name: myAnimation;
       animation-duration: 4.8s;

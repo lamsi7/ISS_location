@@ -1,22 +1,26 @@
-<html lang="en">
+{% extends "base.html" %}
+{% block headstyle %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/subpages.css') }}">
+{% endblock %}
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>ISS Location 3D </title>
-    </head>
-    
-    <body>
-        <h2>
-            <ul>
-                <li><a href="/">Go back</a>
-    
-            </ul>
-    
-        </h2>
-        <h2>2d visualization to be done...</h2>
-    
-    </body>
-    
-    </html>
+{% block title %}3D Visualization{% endblock %}
+{% block body %}
+    <h2>
+        <ul>
+                <p class="lead">
+                        <a href="/" class="btn btn-lg btn-secondary">Go back</a>
+                </p>
+
+        </ul>
+        <p class="lead loading">
+                Loading...
+        </p>
+    </h2>
+    <div class="embed-responsive embed-responsive-16by9 trans">
+        To be done...
+    </div>
+    <!-- <div style="--aspect-ratio: 16/9;">
+        <iframe src="/dashapp/"  width=1300 height=900 style="border: none;"/>
+
+    </div> -->
+
+    {% endblock %}
