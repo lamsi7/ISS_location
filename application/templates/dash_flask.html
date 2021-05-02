@@ -1,13 +1,8 @@
-<html lang="en">
+{% extends "base.html" %}
+{% block headstyle %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/subpages.css') }}">{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ISS Location 3D </title>
-</head>
-
-<body>
+{% block title %}3D Visualization{% endblock %}
+{% block body %}
     <h2>
         <ul>
             <li><a href="/">Go back</a>
@@ -20,6 +15,4 @@
 
     </div>
 
-</body>
-
-</html>
+    {% endblock %}
