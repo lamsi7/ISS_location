@@ -1,21 +1,12 @@
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ISS Location</title>
-</head>
+{% block title %}ISS location{% endblock %}
 
-<body>
-    <h2>
-        <ul>
-            <li><a href="/frame_3d_iss/">3D visualization</a>
-            <li><a href="/plotly_ISS_2D/">2D visualization</a>
+{% block body %}
 
-        </ul>
-
-    </h2>
-</body>
-
-</html>
+    {% block links %}
+    <li><a href="/frame_3d_iss/">3D visualization</a></li>
+    <li><a href="/plotly_ISS_2D/">2D visualization</a></li>
+    
+    {% endblock %}
+{% endblock %}
