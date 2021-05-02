@@ -137,8 +137,8 @@ noaxis = dict(showbackground=False,
               ticks='',
               title='',
               zeroline=False)
-titlecolor = 'black'
-bgcolor = 'white'
+titlecolor = 'white'
+bgcolor = 'rgb(64,64,64)'
 
 # Get current people in space (ISS specificly)
 astronauts = coor.astro_names()
