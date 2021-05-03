@@ -31,7 +31,7 @@ def init_dashboard(server):
     dash_app.layout = html.Div(
         html.Div([
             #dcc.Link('Go back to the main page.', href='/'),
-            html.H4('ISS Live Feed', style={'color':'white'}),
+            html.H4('ISS Live Feed Updated Every 5 seconds', style={'color':'white'}),
             html.Div(id='live-update-text', style={'color':'white'}),
             dcc.Graph(id='iss-graph'),
             dcc.Interval(
