@@ -12,7 +12,8 @@ if not os.path.isfile(grd_file.replace('.gz','')):
     #Leave only .grd file
     os.remove(grd_file)
 
-app = init_app()
+app, app_2d = init_app()
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
+    app_2d.run(host='0.0.0.0', debug=True)
