@@ -1,21 +1,20 @@
-<html lang="en">
+{% extends "base.html" %}
+{% block headstyle %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/style.css') }}">{% endblock %}
+{% block title %}ISS location{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ISS Location</title>
-</head>
+{% block body %}
 
-<body>
-    <h2>
-        <ul>
-            <li><a href="/frame_3d_iss/">3D visualization</a>
-            <li><a href="/plotly_ISS_2D/">2D visualization</a>
+<div class="test_mask row h-100">
+        <div class="col-sm-12 my-auto">
+                        <h1 class="cover-heading">ISS TRACKER</h1>
+                        <p class="lead">Current location of the International Space Station</p>
+                        <p class="lead">
+                                <a href="/frame_3d_iss/" class="btn btn-lg btn-secondary">3D visualization</a>
+                        </p>
+                        <p class="lead">
+                            <a href="/plotly_ISS_2D/" class="btn btn-lg btn-secondary">2D visualization</a>
+                        </p>   
+        </div>
+     </div>
 
-        </ul>
-
-    </h2>
-</body>
-
-</html>
+{% endblock %}
