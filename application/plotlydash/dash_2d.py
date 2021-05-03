@@ -44,7 +44,6 @@ def init_callbacks(dash_app_2d):
     @dash_app_2d.callback(Output('live-update-text', 'children'),
                        Input('interval-component', 'n_intervals'))
     def update_metrics(n):
-        print("Updating 2D")
         iss_location = coor.iss_req()
         iss_lat = iss_location['latitude']
         iss_lon = iss_location['longitude']
@@ -65,7 +64,7 @@ def init_callbacks(dash_app_2d):
 
         plot_data_iss = [Scattergeo(lon=iss_lon, lat=iss_lat, mode='markers', marker=dict(color = 'rgb(255,0,0)',size=13))]
 
-        my_layout = Layout(paper_bgcolor='rgb(64,64,64)', plot_bgcolor='rgb(64,64,64)', height=800,)
+        my_layout = Layout(paper_bgcolor='rgb(64,64,64)', plot_bgcolor='rgb(64,64,64)', height=800)
 
         fig = go.Figure(data=plot_data_iss, layout=my_layout)
 
@@ -73,6 +72,6 @@ def init_callbacks(dash_app_2d):
         fig.update_layout(geo = dict(
         landcolor = "rgb(212, 212, 212)",
         subunitcolor = "rgb(255, 255, 255)",
-        countrycolor = "rgb(255, 255, 255)"),
+        countrycolor = "rgb(255, 255, 255)"), margin={"r":0,"t":0,"l":0,"b":30}
         )
         return fig

@@ -53,7 +53,6 @@ def init_callbacks(dash_app):
     @dash_app.callback(Output('live-update-text', 'children'),
                        Input('interval-component', 'n_intervals'))
     def update_metrics(n):
-        print("Updating 3D")
         iss_location = coor.iss_req()
         iss_lat = iss_location['latitude']
         iss_lon = iss_location['longitude']
