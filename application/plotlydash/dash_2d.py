@@ -7,18 +7,10 @@ import plotly.express as px
 import dash_html_components as html
 import dash_core_components as dcc
 import dash
-from plotly.offline import plot
 import sys
 import plotly.graph_objs as go
 from dash.dependencies import Input, Output
 from application import coor
-
-## plot ISS
-# data = [Scattergeo(lon=np.array(176.6897), lat=np.array(-49.6460))]
-# my_layout = Layout(title='2D visualization')
-
-# fig = {'data': data, 'layout': my_layout}
-# offline.plot(fig, filename='test_2d.html')
 
 def init_dashboard_2d(server):
         # CSS
@@ -76,9 +68,8 @@ def init_callbacks(dash_app_2d):
         my_layout = Layout(paper_bgcolor='rgb(64,64,64)', plot_bgcolor='rgb(64,64,64)', height=800,)
 
         fig = go.Figure(data=plot_data_iss, layout=my_layout)
-        #fig.update_traces(lon=iss_lon, lat=iss_lat, visible= True, selector=dict(type='scattergeo'))
-        #fig = {'data': data, 'layout': my_layout}
 
+        #Change default layout
         fig.update_layout(geo = dict(
         landcolor = "rgb(212, 212, 212)",
         subunitcolor = "rgb(255, 255, 255)",

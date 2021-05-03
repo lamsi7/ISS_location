@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block headstyle %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/subpages.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/transition.css') }}">
 {% endblock %}
 
 {% block title %}3D Visualization{% endblock %}
@@ -11,17 +12,13 @@
                 </p>
 
         </ul>
-        <!-- <p class="lead loading">
+        <p class="lead loading">
                 Loading...
-        </p> -->
+        </p>
     </h2>
     <div class="embed-responsive embed-responsive-16by9 trans">
             <iframe class="embed-responsive-item" width=1300 height=900 style="border: none;" src="/dashapp_2d/" allowfullscreen></iframe>
 
     </div>
-    <!-- <div style="--aspect-ratio: 16/9;">
-        <iframe src="/dashapp/"  width=1300 height=900 style="border: none;"/>
-
-    </div> -->
 
     {% endblock %}
