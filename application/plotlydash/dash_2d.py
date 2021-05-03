@@ -71,12 +71,17 @@ def init_callbacks(dash_app_2d):
         iss_lat = np.array(float(iss_location['latitude']))
         iss_lon = np.array(float(iss_location['longitude']))
 
-        plot_data_iss = [Scattergeo(lon=iss_lon, lat=iss_lat)]
+        plot_data_iss = [Scattergeo(lon=iss_lon, lat=iss_lat, mode='markers', marker=dict(color = 'rgb(255,0,0)',size=13))]
 
-        my_layout = Layout(title='2D visualization',paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', height=800)
+        my_layout = Layout(paper_bgcolor='rgb(64,64,64)', plot_bgcolor='rgb(64,64,64)', height=800,)
 
         fig = go.Figure(data=plot_data_iss, layout=my_layout)
         #fig.update_traces(lon=iss_lon, lat=iss_lat, visible= True, selector=dict(type='scattergeo'))
         #fig = {'data': data, 'layout': my_layout}
-        #fig.update_layout(scene=scene)
+
+        fig.update_layout(geo = dict(
+        landcolor = "rgb(212, 212, 212)",
+        subunitcolor = "rgb(255, 255, 255)",
+        countrycolor = "rgb(255, 255, 255)"),
+        )
         return fig
