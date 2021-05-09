@@ -74,5 +74,4 @@ def init_callbacks(dash_app_2d):
         subunitcolor = "rgb(255, 255, 255)",
         countrycolor = "rgb(255, 255, 255)"), margin={"r":0,"t":0,"l":0,"b":30}
         )
-        fig.update_traces(name='ISS')
         return fig
