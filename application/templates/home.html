@@ -1,10 +1,22 @@
 {% extends "base.html" %}
-{% block headstyle %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/style.css') }}">{% endblock %}
+{% block headstyle %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/style.css') }}">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type='text/javascript'>
+$(document).ready(function(){
+    $('#dropdownMenuButton').hover(function(){
+        $(this).text($(this).text() == 'Astronauts on ISS' ? "{{astro_nr}}" : 'Astronauts on ISS');
+        $(this).click()
+    });
+});
+</script>
+{% endblock %}
 {% block title %}ISS location{% endblock %}
 
 {% block body %}
 
-<div class="test_mask row h-100">
+<div class="test_mask row h-100" id='main-div'>
         <div class="col-sm-12 my-auto">
                         <h1 class="cover-heading">ISS TRACKER</h1>
                         <p class="lead">Current location of the International Space Station</p>
@@ -15,6 +27,15 @@
                         <p class="lead">
                             <a href="/plotly_ISS_2D/" class="btn btn-lg btn-secondary">2D visualization</a>
                         </p>   
+                        <div class="dropdown col-sm-12 my-auto">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Astronauts on ISS</button>
+                                <div class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownMenuButton">
+                                        {%for astronaut in astronauts%}
+                                        <lI>{{astronaut}}</li>
+                                        {%endfor%}
+                                </div>
+                              </div>
+                        
         </div>
      </div>
 

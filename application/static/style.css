@@ -22,8 +22,25 @@ body, html{
 .test_mask{
     background-color: rgba(0, 0, 0, 0.6);
 }
+#dropdownMenuButton{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 17px;
+}
+/* .dropdown{
+    position: relative;
+} */
+.dropdown-menu{
+    background-color:#fff;
+    opacity: 0.7;
+    left: 50% !important;
+    right: auto !important;
+    transform: translate(-50%, 30%) !important;
+ }
+
 li {
     list-style-type: none;
+    margin-left: 5px;
 }
 
 a{

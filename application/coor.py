@@ -12,7 +12,7 @@ def iss_req():
         return current_position
 
     else:
-        return "Error:", r.status_code
+        return "Error: ", r.status_code
 
 
 def astro_names():
@@ -23,4 +23,6 @@ def astro_names():
         r_dict = r.json()
         # Get names on ISS:
         people = [x['name'] for x in r_dict['people'] if x['craft'] == 'ISS']
-    return people
+        return people
+    else:
+        return "Error: ", r.status_code
