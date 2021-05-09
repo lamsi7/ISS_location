@@ -122,6 +122,7 @@ topo_sphere = dict(type='surface',
                    z=zs,
                    colorscale=Ctopo,
                    surfacecolor=topo,
+                   showscale= False,
                    cmin=cmin,
                    cmax=cmax)
 
