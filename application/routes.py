@@ -8,9 +8,9 @@ from application import coor
 def home():
     """Landing page."""
     astronauts = coor.astro_names()
-    title_value = f"There are {len(astronauts)} astronauts on ISS right now:<br><br>{'<br>'.join(astronauts)}"
+    astro_nr = f"There are {len(astronauts)} astronauts on ISS right now"
 
-    return render_template('home.html', astronauts = astronauts)
+    return render_template('home.html', astronauts = astronauts, astro_nr=astro_nr)
 
 
 @app.route('/frame_3d_iss/')
