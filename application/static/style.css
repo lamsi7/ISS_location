@@ -22,8 +22,18 @@ body, html{
 .test_mask{
     background-color: rgba(0, 0, 0, 0.6);
 }
+#dropdownMenuButton{
+
+    font-size: 16.5px;
+}
+.dropdown-menu{
+    background-color:#fff;
+    opacity: 0.7;
+}
 li {
     list-style-type: none;
+    align-items: center;
+    margin-left: 10px;
 }
 
 a{
