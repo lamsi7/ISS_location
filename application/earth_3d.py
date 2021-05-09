@@ -136,14 +136,8 @@ noaxis = dict(showbackground=False,
 titlecolor = 'white'
 bgcolor = 'rgb(64,64,64)'
 
-# Get current people in space (ISS specificly)
-astronauts = coor.astro_names()
-
-title_value = f"Current location of ISS indicated by the red dot. <br>There are {len(astronauts)} astronauts on ISS right now:<br><br>{'<br>'.join(astronauts)}"
 layout = go.Layout(
     autosize=False, width=1200, height=800,
-    title=title_value,
-    titlefont=dict(family='Courier New', color=titlecolor),
     showlegend=False,
     scene=dict(
         xaxis=noaxis,
