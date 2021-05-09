@@ -62,7 +62,7 @@ def init_callbacks(dash_app_2d):
         iss_lat = np.array(float(iss_location['latitude']))
         iss_lon = np.array(float(iss_location['longitude']))
 
-        plot_data_iss = [Scattergeo(lon=iss_lon, lat=iss_lat, mode='markers', marker=dict(color = 'rgb(255,0,0)',size=13))]
+        plot_data_iss = [Scattergeo(lon=iss_lon, lat=iss_lat, mode='markers', text='ISS',marker=dict(color = 'rgb(255,0,0)',size=13))]
 
         my_layout = Layout(paper_bgcolor='rgb(64,64,64)', plot_bgcolor='rgb(64,64,64)', height=800)
 
@@ -74,4 +74,5 @@ def init_callbacks(dash_app_2d):
         subunitcolor = "rgb(255, 255, 255)",
         countrycolor = "rgb(255, 255, 255)"), margin={"r":0,"t":0,"l":0,"b":30}
         )
+        fig.update_traces(name='ISS')
         return fig
