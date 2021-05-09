@@ -5,8 +5,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script type='text/javascript'>
 $(document).ready(function(){
-    $('#dropdownMenuButton').click(function(){
+    $('#dropdownMenuButton').hover(function(){
         $(this).text($(this).text() == 'Astronauts on ISS' ? "{{astro_nr}}" : 'Astronauts on ISS');
+        $(this).click()
     });
 });
 </script>
@@ -28,7 +29,7 @@ $(document).ready(function(){
                         </p>   
                         <div class="dropdown col-sm-12 my-auto">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Astronauts on ISS</button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownMenuButton">
                                         {%for astronaut in astronauts%}
                                         <lI>{{astronaut}}</li>
                                         {%endfor%}
