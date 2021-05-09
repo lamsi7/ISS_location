@@ -24,7 +24,9 @@
                                   Astronauts on ISS
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <p>Test</p>
+                                        {%for astronaut in astronauts%}
+                                        <lI>{{astronaut}}</li>
+                                        {%endfor%}
                                 </div>
                               </div>
                         

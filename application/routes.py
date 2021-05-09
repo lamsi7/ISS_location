@@ -1,12 +1,16 @@
 """Routes for parent Flask app."""
 from flask import render_template
 from flask import current_app as app
+from application import coor
 
 
 @app.route('/')
 def home():
     """Landing page."""
-    return render_template('home.html')
+    astronauts = coor.astro_names()
+    title_value = f"There are {len(astronauts)} astronauts on ISS right now:<br><br>{'<br>'.join(astronauts)}"
+
+    return render_template('home.html', astronauts = astronauts)
 
 
 @app.route('/frame_3d_iss/')
